@@ -1,0 +1,51 @@
+ItemID,ItemName,CategoryID,Price,Calories,PreparationTime,CuisineType,Vegetarian,SpicyLevel,Availability,CategoryName,Description
+1,Item_1,1,10.24,156,17,Chinese,True,3,False,Main Course,Description of Main Course
+2,Item_2,4,9.06,458,24,Japanese,True,2,False,Appetizer,Description of Appetizer
+3,Item_3,4,8.92,415,27,Italian,False,5,True,Appetizer,Description of Appetizer
+4,Item_4,4,5.21,436,16,Indian,True,4,False,Appetizer,Description of Appetizer
+5,Item_5,1,6.65,280,12,Indian,False,5,False,Main Course,Description of Main Course
+6,Item_6,2,11.96,676,6,Indian,True,0,False,Dessert,Description of Dessert
+7,Item_7,1,4.75,438,27,Japanese,True,2,True,Main Course,Description of Main Course
+8,Item_8,3,11.81,646,5,Chinese,True,2,True,Beverage,Description of Beverage
+9,Item_9,2,11.94,217,25,Japanese,False,3,False,Dessert,Description of Dessert
+10,Item_10,4,7.64,307,27,Chinese,False,1,True,Appetizer,Description of Appetizer
+11,Item_11,4,11.48,379,20,Chinese,False,2,False,Appetizer,Description of Appetizer
+12,Item_12,1,6.35,228,6,Japanese,False,0,False,Main Course,Description of Main Course
+13,Item_13,1,14.43,536,19,Indian,False,0,False,Main Course,Description of Main Course
+14,Item_14,2,14.85,508,23,Indian,False,1,True,Dessert,Description of Dessert
+15,Item_15,2,7.71,257,7,Chinese,False,1,False,Dessert,Description of Dessert
+1,Item_1,1,10.24,156,17,Chinese,True,3,False,Main Course,Description of Main Course
+2,Item_2,4,9.06,458,24,Japanese,True,2,False,Appetizer,Description of Appetizer
+3,Item_3,4,8.92,415,27,Italian,False,5,True,Appetizer,Description of Appetizer
+4,Item_4,4,5.21,436,16,Indian,True,4,False,Appetizer,Description of Appetizer
+5,Item_5,1,6.65,280,12,Indian,False,5,False,Main Course,Description of Main Course
+6,Item_6,2,11.96,676,6,Indian,True,0,False,Dessert,Description of Dessert
+7,Item_7,1,4.75,438,27,Japanese,True,2,True,Main Course,Description of Main Course
+8,Item_8,3,11.81,646,5,Chinese,True,2,True,Beverage,Description of Beverage
+9,Item_9,2,11.94,217,25,Japanese,False,3,False,Dessert,Description of Dessert
+10,Item_10,4,7.64,307,27,Chinese,False,1,True,Appetizer,Description of Appetizer
+11,Item_11,4,11.48,379,20,Chinese,False,2,False,Appetizer,Description of Appetizer
+12,Item_12,1,6.35,228,6,Japanese,False,0,False,Main Course,Description of Main Course
+13,Item_13,1,14.43,536,19,Indian,False,0,False,Main Course,Description of Main Course
+14,Item_14,2,14.85,508,23,Indian,False,1,True,Dessert,Description of Dessert
+15,Item_15,2,7.71,257,7,Chinese,False,1,False,Dessert,Description of Dessert
+1,Item_1,1,10.24,156,17,Chinese,True,3,False,Main Course,Description of Main Course
+2,Item_2,4,9.06,458,24,Japanese,True,2,False,Appetizer,Description of Appetizer
+3,Item_3,4,8.92,415,27,Italian,False,5,True,Appetizer,Description of Appetizer
+4,Item_4,4,5.21,436,16,Indian,True,4,False,Appetizer,Description of Appetizer
+5,Item_5,1,6.65,280,12,Indian,False,5,False,Main Course,Description of Main Course
+6,Item_6,2,11.96,676,6,Indian,True,0,False,Dessert,Description of Dessert
+7,Item_7,1,4.75,438,27,Japanese,True,2,True,Main Course,Description of Main Course
+8,Item_8,3,11.81,646,5,Chinese,True,2,True,Beverage,Description of Beverage
+9,Item_9,2,11.94,217,25,Japanese,False,3,False,Dessert,Description of Dessert
+10,Item_10,4,7.64,307,27,Chinese,False,1,True,Appetizer,Description of Appetizer
+11,Item_11,4,11.48,379,20,Chinese,False,2,False,Appetizer,Description of Appetizer
+12,Item_12,1,6.35,228,6,Japanese,False,0,False,Main Course,Description of Main Course
+13,Item_13,1,14.43,536,19,Indian,False,0,False,Main Course,Description of Main Course
+14,Item_14,2,14.85,508,23,Indian,False,1,True,Dessert,Description of Dessert
+15,Item_15,2,7.71,257,7,Chinese,False,1,False,Dessert,Description of Dessert
+1,Item_1,1,10.24,156,17,Chinese,True,3,False,Main Course,Description of Main Course
+2,Item_2,4,9.06,458,24,Japanese,True,2,False,Appetizer,Description of Appetizer
+3,Item_3,4,8.92,415,27,Italian,False,5,True,Appetizer,Description of Appetizer
+4,Item_4,4,5.21,436,16,Indian,True,4,False,Appetizer,Description of Appetizer
+5,Item_5,1,6.65,280,12,Indian,False,5,False,Main Course,Description of Main Course
