@@ -1,0 +1,9 @@
+Number of items per category: {Appetizer-18, Beverage=3, Main Course-17, Dessert-12}
+Average price per category: {Appetizer-8.34, Beverage=11.81, Main Course-8.479411764705883, Dessert=11.615}
+Most expensive item: Item_14 ($14.85)
+Least expensive item: Item_7 ($4.75)
+Average preparation time for vegetarian items: 16.285714285714285 minutes
+Average preparation time for non-vegetarian items: 18.517241379310345 minutes
+Number of available items: 16
+Number of unavailable items: 34
+Item with the highest calories: Item_6 (676 calories)
