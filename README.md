@@ -1,1 +1,3 @@
-# Homework_ACS560
+# Homework_ACS560  
+
+Software Engineering assignments
