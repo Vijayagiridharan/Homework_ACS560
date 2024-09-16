@@ -1,0 +1,461 @@
+{
+	"info": {
+		"_postman_id": "02a791bc-f899-4418-8a2e-f562ef3cc19b",
+		"name": "homework3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31090487"
+	},
+	"item": [
+		{
+			"name": "1. Add Menu Item (POST)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": 56,\r\n    \"itemName\": \"Pizza\",\r\n    \"categoryId\": 2,\r\n    \"price\": 9.99,\r\n    \"calories\": 250,\r\n    \"preparationTime\": 20,\r\n    \"cuisineType\": \"Italian\",\r\n    \"vegetarian\": true,\r\n    \"spicyLevel\": 1,\r\n    \"availability\": true,\r\n    \"categoryName\": \"Main Course\",\r\n    \"description\": \"Delicious Italian pizza\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/menuItems"
+			},
+			"response": [
+				{
+					"name": "1. Add Menu Item (POST)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 56,\r\n    \"itemName\": \"Pizza\",\r\n    \"categoryId\": 2,\r\n    \"price\": 9.99,\r\n    \"calories\": 250,\r\n    \"preparationTime\": 20,\r\n    \"cuisineType\": \"Italian\",\r\n    \"vegetarian\": true,\r\n    \"spicyLevel\": 1,\r\n    \"availability\": true,\r\n    \"categoryName\": \"Main Course\",\r\n    \"description\": \"Delicious Italian pizza\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/menuItems"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:40:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "MenuItem created successfully"
+				}
+			]
+		},
+		{
+			"name": "2. Get Menu Items (GET))",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 54,\r\n  \"name\": \"Burger\",\r\n  \"price\": 10.99,\r\n  \"calories\": 600\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/menuItems"
+			},
+			"response": [
+				{
+					"name": "1. Get Menu Item (GET)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 54,\r\n  \"name\": \"Burger\",\r\n  \"price\": 10.99,\r\n  \"calories\": 600\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/menuItems"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:46:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"itemId\": 1,\n        \"price\": 10.24,\n        \"calories\": 156,\n        \"preparationTime\": 17,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 2,\n        \"price\": 9.06,\n        \"calories\": 458,\n        \"preparationTime\": 24,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 3,\n        \"price\": 8.92,\n        \"calories\": 415,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Italian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 4,\n        \"price\": 5.21,\n        \"calories\": 436,\n        \"preparationTime\": 16,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 4,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 5,\n        \"price\": 6.65,\n        \"calories\": 280,\n        \"preparationTime\": 12,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 6,\n        \"price\": 11.96,\n        \"calories\": 676,\n        \"preparationTime\": 6,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 7,\n        \"price\": 4.75,\n        \"calories\": 438,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": true,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 8,\n        \"price\": 11.81,\n        \"calories\": 646,\n        \"preparationTime\": 5,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": true,\n        \"categoryName\": \"Beverage\",\n        \"description\": \"Description of Beverage\"\n    },\n    {\n        \"itemId\": 9,\n        \"price\": 11.94,\n        \"calories\": 217,\n        \"preparationTime\": 25,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 10,\n        \"price\": 7.64,\n        \"calories\": 307,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 11,\n        \"price\": 11.48,\n        \"calories\": 379,\n        \"preparationTime\": 20,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 12,\n        \"price\": 6.35,\n        \"calories\": 228,\n        \"preparationTime\": 6,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 13,\n        \"price\": 14.43,\n        \"calories\": 536,\n        \"preparationTime\": 19,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 14,\n        \"price\": 14.85,\n        \"calories\": 508,\n        \"preparationTime\": 23,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": true,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 15,\n        \"price\": 7.71,\n        \"calories\": 257,\n        \"preparationTime\": 7,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 16,\n        \"price\": 10.24,\n        \"calories\": 156,\n        \"preparationTime\": 17,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 17,\n        \"price\": 9.06,\n        \"calories\": 458,\n        \"preparationTime\": 24,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 18,\n        \"price\": 8.92,\n        \"calories\": 415,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Italian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 19,\n        \"price\": 5.21,\n        \"calories\": 436,\n        \"preparationTime\": 16,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 4,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 20,\n        \"price\": 6.65,\n        \"calories\": 280,\n        \"preparationTime\": 12,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 21,\n        \"price\": 11.96,\n        \"calories\": 676,\n        \"preparationTime\": 6,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 22,\n        \"price\": 4.75,\n        \"calories\": 438,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": true,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 23,\n        \"price\": 11.81,\n        \"calories\": 646,\n        \"preparationTime\": 5,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": true,\n        \"categoryName\": \"Beverage\",\n        \"description\": \"Description of Beverage\"\n    },\n    {\n        \"itemId\": 24,\n        \"price\": 11.94,\n        \"calories\": 217,\n        \"preparationTime\": 25,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 25,\n        \"price\": 7.64,\n        \"calories\": 307,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 26,\n        \"price\": 11.48,\n        \"calories\": 379,\n        \"preparationTime\": 20,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 27,\n        \"price\": 6.35,\n        \"calories\": 228,\n        \"preparationTime\": 6,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 28,\n        \"price\": 14.43,\n        \"calories\": 536,\n        \"preparationTime\": 19,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 29,\n        \"price\": 14.85,\n        \"calories\": 508,\n        \"preparationTime\": 23,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": true,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 30,\n        \"price\": 7.71,\n        \"calories\": 257,\n        \"preparationTime\": 7,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 31,\n        \"price\": 10.24,\n        \"calories\": 156,\n        \"preparationTime\": 17,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 32,\n        \"price\": 9.06,\n        \"calories\": 458,\n        \"preparationTime\": 24,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 33,\n        \"price\": 8.92,\n        \"calories\": 415,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Italian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 34,\n        \"price\": 5.21,\n        \"calories\": 436,\n        \"preparationTime\": 16,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 4,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 35,\n        \"price\": 6.65,\n        \"calories\": 280,\n        \"preparationTime\": 12,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 36,\n        \"price\": 11.96,\n        \"calories\": 676,\n        \"preparationTime\": 6,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 37,\n        \"price\": 4.75,\n        \"calories\": 438,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": true,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 38,\n        \"price\": 11.81,\n        \"calories\": 646,\n        \"preparationTime\": 5,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": true,\n        \"categoryName\": \"Beverage\",\n        \"description\": \"Description of Beverage\"\n    },\n    {\n        \"itemId\": 39,\n        \"price\": 11.94,\n        \"calories\": 217,\n        \"preparationTime\": 25,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 40,\n        \"price\": 7.64,\n        \"calories\": 307,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 41,\n        \"price\": 11.48,\n        \"calories\": 379,\n        \"preparationTime\": 20,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 42,\n        \"price\": 6.35,\n        \"calories\": 228,\n        \"preparationTime\": 6,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 43,\n        \"price\": 14.43,\n        \"calories\": 536,\n        \"preparationTime\": 19,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 0,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 44,\n        \"price\": 14.85,\n        \"calories\": 508,\n        \"preparationTime\": 23,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": true,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 45,\n        \"price\": 7.71,\n        \"calories\": 257,\n        \"preparationTime\": 7,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 1,\n        \"availability\": false,\n        \"categoryName\": \"Dessert\",\n        \"description\": \"Description of Dessert\"\n    },\n    {\n        \"itemId\": 46,\n        \"price\": 10.24,\n        \"calories\": 156,\n        \"preparationTime\": 17,\n        \"cuisineType\": \"Chinese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 3,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    },\n    {\n        \"itemId\": 47,\n        \"price\": 9.06,\n        \"calories\": 458,\n        \"preparationTime\": 24,\n        \"cuisineType\": \"Japanese\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 2,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 48,\n        \"price\": 8.92,\n        \"calories\": 415,\n        \"preparationTime\": 27,\n        \"cuisineType\": \"Italian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": true,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 49,\n        \"price\": 5.21,\n        \"calories\": 436,\n        \"preparationTime\": 16,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": true,\n        \"spicyLevel\": 4,\n        \"availability\": false,\n        \"categoryName\": \"Appetizer\",\n        \"description\": \"Description of Appetizer\"\n    },\n    {\n        \"itemId\": 50,\n        \"price\": 6.65,\n        \"calories\": 280,\n        \"preparationTime\": 12,\n        \"cuisineType\": \"Indian\",\n        \"vegetarian\": false,\n        \"spicyLevel\": 5,\n        \"availability\": false,\n        \"categoryName\": \"Main Course\",\n        \"description\": \"Description of Main Course\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "3. Update Menu Item (PUT)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": 56,\r\n    \"itemName\": \"Pizza burger\",\r\n    \"categoryId\": 2,\r\n    \"price\": 9.99,\r\n    \"calories\": 250,\r\n    \"preparationTime\": 20,\r\n    \"cuisineType\": \"Italian\",\r\n    \"vegetarian\": true,\r\n    \"spicyLevel\": 1,\r\n    \"availability\": true,\r\n    \"categoryName\": \"Main Course\",\r\n    \"description\": \"Delicious Italian pizza\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/menuItems/56"
+			},
+			"response": [
+				{
+					"name": "3. Update Menu Item (PUT)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 56,\r\n    \"itemName\": \"Pizza burger\",\r\n    \"categoryId\": 2,\r\n    \"price\": 9.99,\r\n    \"calories\": 250,\r\n    \"preparationTime\": 20,\r\n    \"cuisineType\": \"Italian\",\r\n    \"vegetarian\": true,\r\n    \"spicyLevel\": 1,\r\n    \"availability\": true,\r\n    \"categoryName\": \"Main Course\",\r\n    \"description\": \"Delicious Italian pizza\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/menuItems/56"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:43:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "MenuItem updated successfully"
+				},
+				{
+					"name": "3. Update Menu Item (PUT)-not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 56,\r\n    \"itemName\": \"Pizza burger\",\r\n    \"categoryId\": 2,\r\n    \"price\": 9.99,\r\n    \"calories\": 250,\r\n    \"preparationTime\": 20,\r\n    \"cuisineType\": \"Italian\",\r\n    \"vegetarian\": true,\r\n    \"spicyLevel\": 1,\r\n    \"availability\": true,\r\n    \"categoryName\": \"Main Course\",\r\n    \"description\": \"Delicious Italian pizza\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/menuItems/59"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:46:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "MenuItem not found"
+				}
+			]
+		},
+		{
+			"name": "4. Delete Menu Item (DELETE)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/menuItems/56"
+			},
+			"response": [
+				{
+					"name": "4. Delete Menu Item (DELETE)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/menuItems/56"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:43:51 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "MenuItem deleted successfully"
+				},
+				{
+					"name": "4. Delete Menu Item (DELETE)-not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/menuItems/56"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:45:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "MenuItem not found"
+				}
+			]
+		},
+		{
+			"name": "5. Get Median Price of Menu Items (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/menuItems/medianPrice"
+			},
+			"response": [
+				{
+					"name": "5. Get Median Price of Menu Items (GET)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/menuItems/medianPrice"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:43:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "9.06"
+				}
+			]
+		},
+		{
+			"name": "6. Get Average Price of Menu Items (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/menuItemsAnalysis/averagePrice"
+			},
+			"response": [
+				{
+					"name": "6. Get Average Price of Menu Items (GET)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/menuItemsAnalysis/averagePrice"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:29:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "9.393529411764705"
+				}
+			]
+		},
+		{
+			"name": "7. Get Average Calories of Menu Items (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/menuItemsAnalysis/averageCalories"
+			},
+			"response": [
+				{
+					"name": "7. Get Average Calories of Menu Items (GET)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/menuItemsAnalysis/averageCalories"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 20:44:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "391.12"
+				}
+			]
+		}
+	]
+}
