@@ -51,6 +51,13 @@ public class MenuItemServiceImpl implements MenuItemService {
      */
     @Override
     public boolean addMenuItem(MenuItemEntity menuItem) throws Exception {
+        // Check if a menu item with the same name already exists
+        List<MenuItemEntity> existingItems = menuItemRepository.findByItemName(menuItem.getItemName());
+        
+        if (!existingItems.isEmpty()) {
+            throw new Exception("Duplicate menu item name detected: " + menuItem.getItemName());
+        }
+
         try {
             menuItemRepository.save(menuItem);
             return true;

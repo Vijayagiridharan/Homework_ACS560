@@ -14,27 +14,20 @@ import java.util.Optional;
 @Repository
 public interface MenuItemRepository extends CrudRepository<MenuItemEntity, Integer> {
 
-    /**
-     * Retrieves a list of menu items that belong to the specified category.
-     * 
-     * @param categoryName the name of the category to filter menu items by.
-     * @return a List of {@link MenuItemEntity} objects that belong to the specified category.
+    
+	/**
+     * Finds menu items by their category name, ignoring case.
+     *
+     * @param categoryName the name of the category
+     * @return a list of {@link MenuItemEntity} objects that belong to the specified category
      */
     List<MenuItemEntity> findByCategoryNameIgnoreCase(String categoryName);
 
     /**
-     * Retrieves a menu item by its itemName.
+     * Finds a list of menu items by their item name.
      *
-     * @param itemName the name of the menu item to retrieve.
-     * @return an Optional of {@link MenuItemEntity} if found, otherwise empty.
+     * @param itemName the name of the menu item
+     * @return a list of {@link MenuItemEntity} objects matching the specified name
      */
-    Optional<MenuItemEntity> findByItemNameIgnoreCase(String itemName);
-    
-    /**
-     * Checks if a menu item exists by its itemName.
-     * 
-     * @param itemName the name of the menu item.
-     * @return true if a menu item with the given name exists, false otherwise.
-     */
-    boolean existsByItemNameIgnoreCase(String itemName);
+    List<MenuItemEntity> findByItemName(String itemName);
 }
