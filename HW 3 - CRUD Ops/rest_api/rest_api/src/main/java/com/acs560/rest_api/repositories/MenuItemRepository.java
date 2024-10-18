@@ -52,16 +52,15 @@ public class MenuItemRepository {
      * Saves the current list of menu items to the CSV file.
      *
      * @param append whether to append to the existing CSV file or overwrite it.
-     * @return true if the data was successfully saved, false otherwise.
-     * @throws Exception if an error occurs while saving data to the CSV file.
+     * @return a message indicating the result of the save operation.
      */
-    public boolean saveToCsv(boolean append) throws Exception {
+    public String saveToCsv(boolean append) {
         try (FileWriter writer = new FileWriter("menu_items.csv", append)) {
             StatefulBeanToCsv<MenuItem> beanToCsv = new StatefulBeanToCsvBuilder<MenuItem>(writer).build();
             beanToCsv.write(menuItems);
-            return true;
+            return "Data saved successfully to CSV file.";
         } catch (Exception e) {
-            throw new Exception("Failed to save data to CSV", e);
+            return "Failed to save data to CSV: " + e.getMessage();
         }
     }
 
@@ -69,74 +68,71 @@ public class MenuItemRepository {
      * Adds a new menu item to the repository.
      *
      * @param newItem the {@link MenuItem} to add.
-     * @return true if the item was successfully added, false if the item already exists.
-     * @throws Exception if an error occurs while saving data to the CSV file.
+     * @return a message indicating the result of the addition operation.
      */
-    public boolean addMenuItem(MenuItem newItem) throws Exception {
+    public String addMenuItem(MenuItem newItem) {
         if (menuItems.stream().anyMatch(item -> item.getItemId() == newItem.getItemId())) {
-            return false; // Duplicate item
+            return "Duplicate item. Item not added.";
         }
         menuItems.add(newItem);
-
-        if (!saveToCsv(true)) { // Append to CSV
+        String saveResult = saveToCsv(true); // Append to CSV
+        if (saveResult.startsWith("Failed")) {
             menuItems.remove(newItem); // Rollback if saving fails
-            return false;
+            return saveResult; // Return the failure message
         }
-        return true;
+        return "Menu item added successfully. " + saveResult;
     }
 
     /**
      * Updates an existing menu item in the repository.
      *
-     * @param id the ID of the item to update.
+     * @param id          the ID of the item to update.
      * @param updatedItem the {@link MenuItem} with updated data.
-     * @return true if the item was successfully updated, false if the item does not exist.
-     * @throws Exception if an error occurs while saving data to the CSV file.
+     * @return a message indicating the result of the update operation.
      */
-    public boolean updateMenuItem(int id, MenuItem updatedItem) throws Exception {
+    public String updateMenuItem(int id, MenuItem updatedItem) {
         MenuItem existingItem = menuItems.stream()
                 .filter(item -> item.getItemId() == id)
                 .findFirst()
                 .orElse(null);
 
         if (existingItem == null) {
-            return false; // Data does not exist
+            return "Item not found. Update failed.";
         }
 
         int index = menuItems.indexOf(existingItem);
         menuItems.set(index, updatedItem);
-
-        if (!saveToCsv(false)) { // Overwrite CSV
+        String saveResult = saveToCsv(false); // Overwrite CSV
+        if (saveResult.startsWith("Failed")) {
             menuItems.set(index, existingItem); // Rollback
-            return false;
+            return saveResult; // Return the failure message
         }
-        return true;
+        return "Menu item updated successfully. " + saveResult;
     }
 
     /**
      * Deletes a menu item from the repository.
      *
      * @param id the ID of the item to delete.
-     * @return true if the item was successfully deleted, false if the item does not exist.
-     * @throws Exception if an error occurs while saving data to the CSV file.
+     * @return a message indicating the result of the deletion operation.
      */
-    public boolean deleteMenuItem(int id) throws Exception {
+    public String deleteMenuItem(int id) {
         MenuItem itemToDelete = menuItems.stream()
                 .filter(item -> item.getItemId() == id)
                 .findFirst()
                 .orElse(null);
 
         if (itemToDelete == null) {
-            return false; // Data does not exist
+            return "Item not found. Deletion failed.";
         }
 
         menuItems.remove(itemToDelete);
-
-        if (!saveToCsv(false)) { // Overwrite CSV
+        String saveResult = saveToCsv(false); // Overwrite CSV
+        if (saveResult.startsWith("Failed")) {
             menuItems.add(itemToDelete); // Rollback
-            return false;
+            return saveResult; // Return the failure message
         }
-        return true;
+        return "Menu item deleted successfully. " + saveResult;
     }
 
     /**

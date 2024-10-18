@@ -14,17 +14,17 @@ import java.util.List;
 public interface MenuItemService {
 
     /**
-     * Retrieves a {@link MenuItem} by its unique identifier.
+     * Retrieves a menu item by its ID.
      *
-     * @param id the unique identifier of the menu item
-     * @return the {@link MenuItem} with the specified id, or null if not found
+     * @param id the ID of the menu item to retrieve
+     * @return the {@link MenuItem} object with the specified ID
      */
     MenuItem getMenuItem(int id);
 
     /**
-     * Retrieves a list of all {@link MenuItem} entities.
+     * Retrieves a list of all menu items.
      *
-     * @return a list of all menu items
+     * @return a {@link List} of {@link MenuItem} objects
      */
     List<MenuItem> getMenuItems();
 
@@ -32,34 +32,31 @@ public interface MenuItemService {
      * Adds a new {@link MenuItem} to the system.
      *
      * @param menuItem the {@link MenuItem} to be added
-     * @return true if the menu item was successfully added, false otherwise
-     * @throws Exception if an error occurs during the addition of the menu item
+     * @return a message indicating the result of the addition operation.
      */
-    boolean addMenuItem(MenuItem menuItem) throws Exception;
+    String addMenuItem(MenuItem menuItem);
 
     /**
-     * Updates an existing {@link MenuItem} with the given id.
+     * Updates an existing {@link MenuItem} with the given ID.
      *
      * @param id the unique identifier of the menu item to be updated
      * @param menuItem the updated {@link MenuItem} information
-     * @return true if the menu item was successfully updated, false otherwise
-     * @throws Exception if an error occurs during the update of the menu item
+     * @return a message indicating the result of the update operation.
      */
-    boolean updateMenuItem(int id, MenuItem menuItem) throws Exception;
+    String updateMenuItem(int id, MenuItem menuItem);
 
     /**
      * Deletes a {@link MenuItem} by its unique identifier.
      *
      * @param id the unique identifier of the menu item to be deleted
-     * @return true if the menu item was successfully deleted, false otherwise
-     * @throws Exception if an error occurs during the deletion of the menu item
+     * @return a message indicating the result of the deletion operation.
      */
-    boolean deleteMenuItem(int id) throws Exception;
+    String deleteMenuItem(int id);
 
     /**
-     * Calculates the median price of all {@link MenuItem} entities.
+     * Calculates the median price of all menu items.
      *
-     * @return the median price of all menu items
+     * @return the median price of menu items. Returns 0.0 if there are no menu items.
      */
     double calculateMedianPrice();
 }

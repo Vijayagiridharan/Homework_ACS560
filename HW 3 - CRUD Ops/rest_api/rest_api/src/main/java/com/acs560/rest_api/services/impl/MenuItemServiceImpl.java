@@ -23,7 +23,7 @@ public class MenuItemServiceImpl implements MenuItemService {
      * Retrieves a menu item by its ID.
      *
      * @param id the ID of the menu item to retrieve
-     * @return the {@link MenuItem} object with the specified ID
+     * @return the {@link MenuItem} object with the specified ID, or null if not found
      */
     @Override
     public MenuItem getMenuItem(int id) {
@@ -44,11 +44,10 @@ public class MenuItemServiceImpl implements MenuItemService {
      * Adds a new menu item.
      *
      * @param menuItem the {@link MenuItem} object to add
-     * @return true if the menu item was added successfully, false otherwise
-     * @throws Exception if an error occurs while adding the menu item
+     * @return a message indicating the result of the addition operation.
      */
     @Override
-    public boolean addMenuItem(MenuItem menuItem) throws Exception {
+    public String addMenuItem(MenuItem menuItem) {
         return menuItemRepository.addMenuItem(menuItem);
     }
 
@@ -57,11 +56,10 @@ public class MenuItemServiceImpl implements MenuItemService {
      *
      * @param id the ID of the menu item to update
      * @param menuItem the {@link MenuItem} object with updated information
-     * @return true if the menu item was updated successfully, false otherwise
-     * @throws Exception if an error occurs while updating the menu item
+     * @return a message indicating the result of the update operation.
      */
     @Override
-    public boolean updateMenuItem(int id, MenuItem menuItem) throws Exception {
+    public String updateMenuItem(int id, MenuItem menuItem) {
         return menuItemRepository.updateMenuItem(id, menuItem);
     }
 
@@ -69,11 +67,10 @@ public class MenuItemServiceImpl implements MenuItemService {
      * Deletes a menu item by its ID.
      *
      * @param id the ID of the menu item to delete
-     * @return true if the menu item was deleted successfully, false otherwise
-     * @throws Exception if an error occurs while deleting the menu item
+     * @return a message indicating the result of the deletion operation.
      */
     @Override
-    public boolean deleteMenuItem(int id) throws Exception {
+    public String deleteMenuItem(int id) {
         return menuItemRepository.deleteMenuItem(id);
     }
 
